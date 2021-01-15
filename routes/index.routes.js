@@ -16,7 +16,7 @@ app.post('/handelLogin',async(req,res) =>{
     const user=await userModel.findOne({email})
     console.log(user);
     if (user ==null){
-        res.redirect('/index')
+        res.redirect('/')
     }
     else{
         const match = await bcrypt.compare(password, user.password);
@@ -31,7 +31,7 @@ app.post('/handelLogin',async(req,res) =>{
         }
     
        else {
-        res.redirect('/index')
+        res.redirect('/')
     }
 }
    
