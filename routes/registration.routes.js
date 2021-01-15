@@ -23,7 +23,7 @@ app.post('/handelRegistar', validation,
     if (error.isEmpty() == true) {
       bcrypt.hash(password, 8, async function (err, hash) {
         await userModel.insertMany({ first_name, last_name, usrename, email, password: hash })
-        res.redirect('/index')
+        res.redirect('/')
       });
     }
     else {
