@@ -15,7 +15,7 @@ app.get('/profile/:id',async(req,res)=>  {
     res.render('profile.ejs',{posts, name: req.session.username , userID })
     }
     else{
-        res.redirect('/index')
+        res.redirect('/')
     }
 });
 
