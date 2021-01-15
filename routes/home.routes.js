@@ -17,7 +17,7 @@ let url ;
     }
     else{
 
-        res.redirect('/index')
+        res.redirect('/')
     }
    
    });
@@ -31,7 +31,7 @@ let url ;
     res.redirect('/home/'+userID)
     }
 else {
-    res.redirect('/index')
+    res.redirect('/')
     }
   
 });
