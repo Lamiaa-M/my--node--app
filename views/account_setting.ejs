@@ -1,0 +1,46 @@
+
+<%- include('shared/header.ejs') %> 
+<%- include('shared/nav.ejs') %> 
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-8 m-auto card p-5">
+            <div class="">
+                <h3>Account Setting</h3>
+                <hr>
+                <form action="/account_setting" method="post">
+                    <input value ='<%=  passOldInputs.oldPassword %>'  name="oldPassword" placeholder="Enter Old Password" type="text" class="form-control my-2" <%= passInputsError.find(e=>e.param=="oldPassword")?"is-invalid":"" %> >
+                    <% if (passInputsError.find(e=>e.param=="oldPassword")) { %>
+                        <div class="alert alert-danger my2" role="alert">
+                            wrong password
+
+                        </div>
+                     
+                    <% } %>
+                    <input value ='<%=  passOldInputs.newPassword %>' name="newPassword" placeholder="New Password" type="text" class="form-control my-2" <%= passInputsError.find(e=>e.param=="newPassword")?"is-invalid":"" %>>
+                    <% if (passInputsError.find(e=>e.param=="newPassword")) { %>
+                        <div class="alert alert-danger my2" role="alert">
+                           invalid password
+ 
+                        </div>
+                     
+                    <% } %>
+                    <input value ='<%=  passOldInputs.repeatPassword %>' name="repeatPassword" placeholder="Repeat Password" type="text" class="form-control my-2" <%= passInputsError.find(e=>e.param=="repeatPassword")?"is-invalid":"" %> >
+                    <% if (passInputsError.find(e=>e.param=="newPassword")) { %>
+                        <div class="alert alert-danger my2" role="alert">
+                            password dose't match
+ 
+                        </div>
+                     
+                    <% } %>
+                    <button class="btn btn-dark text-white mt-3">Save Setting</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('shared/footer.ejs') %> 
+
+
