@@ -9,24 +9,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav m-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href='/home/<%= userID %>'>Home</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/profile/<%= userID %>">My Profile</a>
-                    </li>
-
-
-                </ul>
-
-            </div>
+            
             <div class="mr-5">
                 <ul class="navbar-nav m-auto ">
                     <li class="nav-item dropdown ">
@@ -37,10 +20,15 @@
                             <%= name %>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/profile/<%= userID %>">My Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href='/home/<%= userID %>'>Home</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/account_setting">Account Setting</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/">Logout</a>
+                            <a class="dropdown-item" href="/index">Logout</a>
                         </div>
+              
                     </li>
                 </ul>
             </div>
