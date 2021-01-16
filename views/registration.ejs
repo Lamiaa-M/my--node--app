@@ -45,7 +45,7 @@
                                                 <input value="<%= oldInputs.password %>" type="password"  name="password" class="form-control inp pt-3 mb-3" placeholder="Password">
                                                 <% if (error.find(e=>e.param=='password')) { %>
                                                     <div class="alert alert-danger text-center my-3">
-                                                        Password is Required
+                                                        Password is Required (Your passowrd must be at lest 8 characters and include uppercase and lowercase letter and digit and spcial character)
                                                     </div>
                                                     <% } %>
                                                         <button type="submit " class="btn btn-outline-dark text-white w-100">SignUp</button>
