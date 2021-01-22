@@ -4,7 +4,7 @@ const mongoose =require('mongoose')
 const userSchema=mongoose.Schema({
     first_name: String,
     last_name: String,
-    usrename: String,
+    usrename: { type :String,unique: true }
     email: String,
     password: String
 
