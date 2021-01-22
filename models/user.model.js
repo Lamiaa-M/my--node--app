@@ -5,7 +5,7 @@ const userSchema=mongoose.Schema({
     first_name: String,
     last_name: String,
     usrename: String,
-    email: { type :String,unique: true },
+    email: String,
     password: String
 
 })
