@@ -52,10 +52,11 @@
                        
                         <div class="modal-body">
                             <% for( let i = 0; i < posts.length; i++ ) { %>
-                            <form action="/EditPost/<%= posts[i]._id %>" method="post"> <% } %>
-                                <input class="form-control my-3" name="title" placeholder="Enter Title" type="text">
+                            <form action="/EditPost/<%= posts[i]._id %>" method="post"> 
+                                <input class="form-control my-3" name="title" placeholder="Enter Title" type="text"  value="<%= posts[i].title %>">
                                 <textarea class="form-control" placeholder="Enter Text" name="post" id="" cols="20"
-                                    rows="10"></textarea> 
+                                    rows="10"  ><%= posts[i].post %></textarea> 
+                                    <% } %>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                         <button type="submit" class="btn btn-dark text-white ">Re-Post</button>
