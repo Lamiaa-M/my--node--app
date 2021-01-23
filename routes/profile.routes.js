@@ -27,5 +27,16 @@ app.get('/delete/:id',async(req,res)=>{
 
 })
 
+app.post('/EditPost/:id',async(req,res) =>{
+    if(req.session.isLoggedIn == true){
+    const {title, post}= req.body
+    await postModel.findByIdAndUpdate({_id: req.params.id},{title,post})
+   res.redirect('/profile/'+userID)
+    }
+else {
+    res.redirect('/')
+    }
+  
+});
 
 module.exports=app
