@@ -28,6 +28,8 @@
                         <hr>
                         <h3><%= posts[i].title %> </h3>
                         <p class="pt-4"><%= posts[i].post %> </p>
+                         <a class="btn btn-dark" href="/edit">Edit</a> 
+                         <a class="btn btn-danger " href="/delete/<%= posts[i]._id %>">delete</a>
 
                     </div>
 
