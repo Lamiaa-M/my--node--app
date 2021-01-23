@@ -36,13 +36,7 @@ else {
   
 });
 
-app.get('/delete/:id',async(req,res)=>{
 
-    await postModel.findByIdAndDelete({_id: req.params.id})
-
-    res.redirect('/home/'+userID)
-
-})
 
 
 module.exports = app
