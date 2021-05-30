@@ -4,7 +4,7 @@ const userModel = require('../models/user.model')
 
 let userID ;
 let url ;
-let date;
+let date=[];
 
   app.get('/home/:id',async(req,res)=> {
     if(req.session.isLoggedIn == true){
@@ -15,7 +15,8 @@ let date;
       // const postName = await userModel.find(posts.userID)
         for(var i =0 ; i<posts.length ; i++)
       {
-          date =new Date(posts[i].updatedAt).toDateString();
+       const updatedAt  =new Date(posts[i].updatedAt).toDateString();
+         date.push(updatedAt);
  
 
       }
