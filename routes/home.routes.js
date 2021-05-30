@@ -4,6 +4,7 @@ const userModel = require('../models/user.model')
 
 let userID ;
 let url ;
+let date;
 
   app.get('/home/:id',async(req,res)=> {
     if(req.session.isLoggedIn == true){
@@ -12,8 +13,14 @@ let url ;
         url=req.url
        const posts = await postModel.find({}).populate("userID")
       // const postName = await userModel.find(posts.userID)
-      console.log(posts.userID)
-        res.render('home.ejs', {posts, name: req.session.username ,userID ,url ,posts })
+        for(var i =0 ; i<posts.length ; i++)
+      {
+          date =new Date(posts[i].updatedAt).toDateString();
+ 
+
+      }
+     
+        res.render('home.ejs', {posts, name: req.session.username ,userID ,url , date })
     }
     else{
 
