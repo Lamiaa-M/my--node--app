@@ -3,6 +3,7 @@ const postModel = require('../models/post.model')
 
 let userID ;
 let url ;
+let date;
 
 app.get('/profile/:id',async(req,res)=>  {
     if(req.session.isLoggedIn == true) {
@@ -11,8 +12,13 @@ app.get('/profile/:id',async(req,res)=>  {
         url=req.url
 
     const posts = await postModel.find({ userID :req.session.userID })
-    //console.log(posts)
-    res.render('profile.ejs',{posts, name: req.session.username , userID })
+    for(var i =0 ; i<posts.length ; i++)
+      {
+          date =new Date(posts[i].updatedAt).toDateString();
+ 
+
+      }
+         res.render('profile.ejs',{posts, name: req.session.username , userID ,date })
     }
     else{
         res.redirect('/')
