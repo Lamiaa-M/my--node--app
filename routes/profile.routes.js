@@ -12,11 +12,10 @@ app.get('/profile/:id',async(req,res)=>  {
         url=req.url
 
     const posts = await postModel.find({ userID :req.session.userID })
-    for(var i =0 ; i<posts.length ; i++)
+    for(var i =0 ; i< posts.length ; i++)
       {
-        const updatedAt  =new Date(posts[i].updatedAt).toDateString();
+        const updatedAt =new Date(posts[i].updatedAt).toDateString();
         date.push(updatedAt);
- 
 
       }
          res.render('profile.ejs',{posts, name: req.session.username , userID ,date })
