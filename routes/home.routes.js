@@ -13,15 +13,14 @@ let date=[];
         url=req.url
        const posts = await postModel.find({}).populate("userID")
       // const postName = await userModel.find(posts.userID)
-        for(var i =0 ; i<posts.length ; i++)
+        for(var i =0 ; i< posts.length ; i++)
       {
-       const updatedAt  =new Date(posts[i].updatedAt).toDateString();
+       const updatedAt =new Date(posts[i].updatedAt).toDateString();
          date.push(updatedAt);
- 
 
       }
      
-        res.render('home.ejs', {posts, name: req.session.username ,userID ,url , date })
+        res.render('home.ejs',{posts, name: req.session.username ,userID ,url , date })
     }
     else{
 
